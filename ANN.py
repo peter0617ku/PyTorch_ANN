@@ -80,15 +80,15 @@ print('Accuracy of the network on the 10000 test images: %d %%' % (100*correct/t
 class_correct = [0]*10
 class_total = [0]*10
 
-with torch.no_grad:
-    for daata in testLoader:
+with torch.no_grad():
+    for data in testLoader:
         input, labels=data[0], data[1]
         input=input.view(input.shape[0], -1)
 
         output=net(input)
 
         _, predicted = torch.max(output, 1)
-        c=(predicted==label).sqeeze()
+        c=(predicted==labels).sqeeze()
         for i in range(10):
             label = labels[i]
             class_correct[label] = class_correct[label]+c[i].item()
