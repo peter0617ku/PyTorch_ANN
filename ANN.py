@@ -88,7 +88,7 @@ with torch.no_grad():
         output=net(input)
 
         _, predicted = torch.max(output, 1)
-        c=(predicted==labels).sqeeze()
+        c=(predicted==labels).squeeze()
         for i in range(10):
             label = labels[i]
             class_correct[label] = class_correct[label]+c[i].item()
