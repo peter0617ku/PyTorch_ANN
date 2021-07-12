@@ -33,7 +33,7 @@ class NeuralNetworkModule(nn.Module):
 net=NeuralNetworkModule()
 print(net)
 
-# Parameter
+# Hyper Parameter
 total_epoch = 3 # 訓練的迭代次數
 learningRate = 0.002 # Learning Rate
 criterion = nn.CrossEntropyLoss() # Loss Function
